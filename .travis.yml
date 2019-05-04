@@ -6,4 +6,4 @@ before_install:
   - docker build -t brianchen/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run brianchen/docker-react -- --coverage
+  - docker run brianchen/docker-react npm run test -- --coverage
