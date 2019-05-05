@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run brianchen/docker-react npm run test -- --coverage
+
+depoly:
+  provider: elasticbeanstalk
+  #  my region : DockerReact-env.thzvximtzx.us-east-2.elasticbeanstalk.com
+  region: "us-east-2"
+  app: "react-docker"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-315024936559"
+  bucket_path: "react-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
