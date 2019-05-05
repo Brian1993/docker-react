@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run brianchen/docker-react npm run test -- --coverage
 
-depoly:
+deploy:
   provider: elasticbeanstalk
   #  my region : DockerReact-env.thzvximtzx.us-east-2.elasticbeanstalk.com
   region: "us-east-2"
